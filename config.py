@@ -6,4 +6,8 @@ SheetToParse = "Sheet2"
 
 ColumnNamesToSearch = ["Organism", "Sub disease", "Prognosis notes", "buzzwords"]
 
+SearchAnd = False
+
 OpenBrowser = True
+
+GitHubRepoLink = "https://github.com/zenxr/ExcelParser"

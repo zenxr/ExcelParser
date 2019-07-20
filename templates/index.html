@@ -11,7 +11,7 @@
 </head>
 <!-- Section navbar -->
 <nav class="navbar bg-dark text-white">
-    <div class="container-fluid">
+    <div class="container>
         <div class="navbar-header">
             <a class="navbar-brand text-white" href="#">
                 {% if title %}
@@ -28,23 +28,53 @@
 <br>
 <br>
 <!-- Section Body -->
-<div class="container" style="max-width: 1700">
+<div class="container-fluid" style="max-width: 1700">
     <div class="row">
-        <div class="col-md-12">
-
-        <form class="form" action="" method="post">
-            <div class="form-group">
-                <label for="{{ search_all }}">Search everything</label>
-                <input type="text" class="form-control" name="search_all"></textarea>
-            </div>
-            {% for column in columns %}
-            <div class="form-group">
-                <label for="{{ column }}">{{ column.title() }}</label>
-                <input type="text" class="form-control" name="{{ column }}"></textarea>
-            </div>
-            {% endfor %}
-            <button type="submit" class="btn btn-primary bg-dark">Submit</button>
-        </form>
+        <div class="col-lg-6">
+            <form class="form" action="" method="post">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="{{ search_all }}">Search everything</label>
+                        <input type="text" class="form-control" name="search_all" value={{ request.form["search_all"] }}></textarea>
+                        <small class="form-text text-muted">Searches all columns for any matches of a single query given a column separated queries.</small>
+                    </div>
+                </div>
+                {% for column in columns %}
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="{{ column }}">{{ column.title() }}</label>
+                        <input type="text" class="form-control" name="{{ column }}" value="{{ request.form[ column ]}}"></textarea>
+                    </div>
+                </div>            
+                {% endfor %}
+                <button type="submit" class="btn btn-primary bg-dark">Submit</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">How to Use This Tool</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>Criteria format: a comma separated list of phrases to search for</li>
+                                <li>Search everything searches <i>ALL</i> columns for <i>ANY</i> of the given criteria</li>
+                                <li>
+                                    Searching using multiple columns returns matches where <i>ALL</i> criteria is a match for the given item
+                                    <br>
+                                    <small class="text-muted">This is the default behavior and can be modified in configuration, follow the Repo link below for more information.</small>
+                                </li>
+                            </ul>
+                            <p>
+                                Example usage: <br> Buzzwords search for <b>"South America, Brazil"</b> will return 
+                                items that mention either South America or Brazil in the Buzzwords field.
+                            </p>
+                            <p>
+                                See the README.md on the GitHub repository for more information.
+                            </p>
+                        </p>
+                        <a href="{{ github_repo_link }}" class="btn btn-primary bg-dark">Find the Repo</a>
+                    </div>
+                </div>
         </div>
     </div>
     <br>

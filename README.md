@@ -7,7 +7,8 @@ Brady Howard asked for this, I'm not providing maintenance on this. Bug him if h
 * `config.py` - configuration file; has FilePath, and etc.
 * `Pipfile` and `Pipfile.lock` - Used by pipenv to sandbox this application. All dependencies are stored only in the pipenv, so different users don't have to bother with managing package versions, configuration, and etc.
 * `README.md` - the file responsible for showing the currently displayed text.
-* `__init__.py` - app's root file.
+* `__init__.py` - app's root file; almost all code logic occurs here.
+* `./templates` - (mostly) html template files
 
 ## Config.py
 
