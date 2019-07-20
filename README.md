@@ -29,6 +29,8 @@ This is made in Python3.7. It uses pipenv, which handles resolving dependencies 
 * Grab *pipenv* via `pip3 install pipenv` if its not already installed. (try pipenv in terminal/cmd)
 
 **Installation**
+* Clone the repository
+* Open shell/CMD inside of the cloned repository folder (where __init__.py lives)
 * `pipenv install --dev` will install all of the packages needed.
 
 Congratulations, installation complete!
