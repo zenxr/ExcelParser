@@ -1,6 +1,6 @@
 # Excel Parser
 
-Brady Howard asked for this, I'm not providing maintenance on this. Bug him if he spreads the app around and it isn't stable anymore!
+Brady Howard asked for this, I'm not providing maintenance on it. Bug him if he spreads the app around and it isn't stable anymore!
 
 ### Application structure
 
