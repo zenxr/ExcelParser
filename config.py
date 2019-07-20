@@ -6,7 +6,7 @@ SheetToParse = "Sheet2"
 
 ColumnNamesToSearch = ["Organism", "Sub disease", "Prognosis notes", "buzzwords"]
 
-SearchAnd = False
+SearchAnd = And
 
 OpenBrowser = True
 
