@@ -24,9 +24,12 @@ Configuration of the application is done in this file. Specifies where to look f
 
 This is made in Python3.7. It uses pipenv, which handles resolving dependencies and ensures this application is sandboxed in its own environment.
 
+**Software Requirements**
 * Grab Python3.7 (and pip, though it may come with python3.7)
 * Grab *pipenv* via `pip3 install pipenv` if its not already installed. (try pipenv in terminal/cmd)
-* `pipenv install --dev` will install all dependencies.
+
+**Installation**
+* `pipenv install --dev` will install all of the packages needed.
 
 Congratulations, installation complete!
 ## Running
