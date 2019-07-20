@@ -36,6 +36,10 @@ This is made in Python3.7. It uses pipenv, which handles resolving dependencies 
 Congratulations, installation complete!
 ## Running
 
+Make sure to set up the configuration file as needed. 
+
+Specifically, the `ExcelFilePath` variable *must* be set correctly. Default: "./Files/micro .xlsx" (suggest leaving the default, place your file there with that name)
+
 * `pipenv run python __init__.py`
 
 This will start a web server on `127.0.0.1:5000`, open it in a web browser. (I've automated that, but without making the code asyncronous you'll probably have to refresh once it opens.)
