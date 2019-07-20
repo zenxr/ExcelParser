@@ -1,0 +1,80 @@
+<html>
+<link rel="stylesheet" media="screen" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}"/>
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<head>
+    {% if title %}
+    <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Excel Parser</title>
+    {% endif %}
+</head>
+<!-- Section navbar -->
+<nav class="navbar bg-dark text-white">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand text-white" href="#">
+                {% if title %}
+                {{ title }}
+                {% else %}
+                Excel Parser
+                {% endif %}
+            </a>
+        </div>
+    </div>
+</nav>
+<!-- end section -->
+<br>
+<br>
+<br>
+<!-- Section Body -->
+<div class="container" style="max-width: 1700">
+    <div class="row">
+        <div class="col-md-12">
+
+        <form class="form" action="" method="post">
+            <div class="form-group">
+                <label for="{{ search_all }}">Search everything</label>
+                <input type="text" class="form-control" name="search_all"></textarea>
+            </div>
+            {% for column in columns %}
+            <div class="form-group">
+                <label for="{{ column }}">{{ column.title() }}</label>
+                <input type="text" class="form-control" name="{{ column }}"></textarea>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary bg-dark">Submit</button>
+        </form>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover table-sm">
+            <thead class="thead thead-dark" >
+                <tr class="d-flex">
+                    {% for column in organismColumns%}
+                    <th class="col-2">{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for organism in organisms %}
+                <tr class="d-flex">
+                    {% for key, value in organism.items() %}
+                    <td class="col-2">{{ value if value != None else " " }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<!-- end body -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" />
+</html>
